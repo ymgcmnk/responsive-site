@@ -1,0 +1,201 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #fdfcf6  ;
+$subColor: #FFD630  ;
+$keyColor: #FF2E31  ;
+$fontColor: #363129  ;
+
+// size
+$large: "(min-width:1025px)";
+$middle: "(min-width:769px) and (max-width:1024px)";
+$small: "(min-width:768px)";
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+
+
+/* header
+------------------------------------------------------------*/
+header{
+  margin-bottom: 50px;
+}
+
+#header-img{
+  background-image: url("../img/main.jpg");
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+  h1 {
+    padding-top: 80px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3.5rem;
+  }
+
+
+/* main
+------------------------------------------------------------*/
+.title-p{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+section {
+  padding: 60px 0;
+  background-color: $subColor;
+  margin-top: 50px;
+}
+
+  .container {
+    width: 90%;
+    display: -webkit-flex;
+    display:         flex;
+    margin:auto;
+    justify-content: space-between;
+  }
+
+
+  h2 {
+    color: $keyColor;
+    background-color: $baseColor darken, 20%;
+    font-size: 2.4rem;
+    font-weight: bold;
+    border: 1px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .box {
+   @include flex(1);
+    margin: 10px 0;                     // 上下にマージン
+    padding: 20px;
+    background-color: $baseColor;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+  }
+
+
+/* footer
+------------------------------------------------------------*/
+footer {
+  background-color: $subColor;
+  padding: 30px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: auto;
+}
+
+.mail-button {
+  width: 100px;
+  height: 20px;
+  padding: 10px;
+  border: 2px solid $keyColor;
+  color: $keyColor;
+  background-color: $baseColor;
+  text-align: center;
+  @include border-radius(4px);
+  font-size: 20px;
+  line-height: 0;
+  &:visited {
+    color: $keyColor darken, 20%;
+  }
+}
+
+
+
+// PC
+@media (min-width: 769px) {
+    /* Base
+  ------------------------------------------------------------*/
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+ #header-img{
+  height: 500px;
+}
+
+  h1 {
+    padding-top: 200px;
+    font-size: 4rem;
+  }
+
+  /* main
+  ------------------------------------------------------------*/
+
+  
+   .box {
+
+      margin: 0 10px;                   // 左右にマージン
+    }
+
+  /* footer
+  ------------------------------------------------------------*/
+  .mail-button {
+    &:hover, &:active {
+      background-color: $baseColor;
+      color: $keyColor;
+    }
+  }
+
+
+}
